@@ -143,9 +143,8 @@ class Main(QWidget):
             if j == 0:
                 dst_page = dst[k].addBlankPage(W, H)
                 k = (k + 1)%2 if self.opt_both_sides else k
-            x,y = src_page.mediaBox.upperRight
-            h0 = src_page.mediaBox.getHeight()
-            w0 = src_page.mediaBox.getWidth()
+            h0 = float(src_page.mediaBox.getHeight())
+            w0 = float(src_page.mediaBox.getWidth())
             if self.opt_n_per_page == 1:
                 if self.opt_potrait:
                     R = 0
