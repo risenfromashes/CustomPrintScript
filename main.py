@@ -261,7 +261,7 @@ class Main(QWidget):
                     dst[1].addBlankPage(W,H)
             dst[1].write(open('__custom_print_temp_out_2.pdf', 'wb'))
         system("lpoptions -o ColorModel=%s"%("Black" if self.opt_bnw else "CMYK"))
-        system("lpoptions -o PageSize=%s"%("A4" if self.opt_paper == 1 else "Letter"))
+        system("lpoptions -o PageSize=%s"%("A4" if self.opt_paper == 0 else "Letter"))
         system("lprm -") #clear previous jobs
         system("lp __custom_print_temp_out_1.pdf")
         if self.opt_both_sides:
